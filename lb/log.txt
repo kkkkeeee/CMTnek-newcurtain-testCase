@@ -1,0 +1,1134 @@
+/----------------------------------------------------------\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \/ __ \/ __ \   |
+|    /  |/ // __/  / ,<   /___ \ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \___/ \___/ \___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2017 UCHICAGO ARGONNE, LLC            |
+| Version:  17.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\----------------------------------------------------------/
+                                                              
+
+ Number of processors: 128
+ REAL    wdsize      : 8
+ INTEGER wdsize      : 4
+ Timer accuracy      : 1.63E-07
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.rea                                                                  
+ WARNING: lgmres might be too low!
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.re2                                                                  
+ byte swap: F 6.543210030 -0.2931277218E+36
+
+ mapping elements to processors
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.map                                                                  
+ read map file 0.574853518774034455E-01
+ RANK     0 IEG    1541    1542    1543    1544    1549    1550    1551    1552
+                   1797    1798    1799    1800    1805    1806    1807    1808
+ element load imbalance:  0 16 16
+ done :: mapping elements to processors
+  
+   reading mesh 
+   reading bc for ifld 1
+done :: read .re2 file    .34E-01 sec
+ 0  objects found
+ 103   Parameters from file:
+   1          1.000000         p01 DENSITY
+   2         -10935.00         p02 VISCOS
+  11         5000.00         p11 NSTEPS
+  12         1.0000000E-03     p12 DT
+  15          10000.000         p15 IOSTEP
+  21         1.0000000E-05     p21 DIVERGENCE
+  22         1.0000000E-08     p22 HELMHOLTZ
+  24         1.0000000E-02     p24 TOLREL
+  25         1.0000000E-02     p25 TOLABS
+  27          3.000000         p27 TORDER
+  59         0.0000000E+00     p59 !=0 --> use std axhelm for all elem
+  65          1.000000         p65 #iofile(eg,0 or 64); <0 --> sep. dirs
+  66          6.000000         p66 write fmt:ONLY postx uses rea value
+  67          6.000000         p67 read fmt: same modes as p66
+  68          1000.000         p68 iastep: freq for avg_all
+  72         1310720.0
+  93          20.00000         p93 Numbr of prev pressure solns saved
+  94          5.000000         p94 start projecting vel. after p94 step
+  95          5.000000         p95 start projecting pr after p95 step
+  99          4.000000         p99    dealiasing:if <0 disable
+ 101          1.000000         p101   No. of additional filter modes
+ 103         5.0000001E-02     p103   weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048         128
+ lx1  /lx2  /lx3 :           5           5           5
+ done :: read .rea file    .16227     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000190864 0.000173618 0.000202841
+   crystal router                : 0.000475497 0.000474875 0.000476169
+   all reduce                    : 0.00025663 0.000256568 0.000256697
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 5.4089E-02 seconds   0  5       75812        2048
+ 8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data 1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data 1
+  
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field 1    =  F
+ IFADVC for field 1    =  T
+ IFNONL for field 1    =  F
+   
+ Dealiasing enabled, lxd= 6
+  
+ Estimated eigenvalues
+ EIGAA =  6.61263494872986968
+ EIGGA =  188667.016559569311
+ EIGAE =  0.986960440108935882E-01
+ EIGAS =  0.124378109452736338E-02
+ EIGGE =  188667.016559569311
+ EIGGS =  2.00000000000000000
+  
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx: 1 2 4
+ mg_ny: 1 2 4
+ mg_nz: 1 2 4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000143471 0.000134936 0.000149207
+   crystal router                : 0.000162603 0.000160569 0.000164688
+   all reduce                    : 2.54897e-05 2.53679e-05 2.55345e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+   setupds time 2.0480E-02 seconds   1  2        2048        2048
+   setvert3d:   4       38928       55312       38928       38928
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20096 unique labels shared
+   pairwise times (avg, min, max): 0.000153942 0.00014552 0.000161376
+   crystal router                : 0.000335547 0.000334805 0.000336705
+   all reduce                    : 0.000146529 0.000146474 0.000146575
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 25052 25052 25052
+   buffer bytes (avg, min, max): 321536 321536 321536
+   setupds time 3.8913E-02 seconds   2  4       38928        2048
+   setvert3d:   3       14340       16388       14340       14340
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8320 unique labels shared
+   pairwise times (avg, min, max): 0.000147349 0.000137791 0.000156388
+   crystal router                : 0.000224992 0.000224418 0.00022579
+   all reduce                    : 6.93114e-05 6.92278e-05 6.93704e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 11644 11644 11644
+   buffer bytes (avg, min, max): 133120 133120 133120
+   setupds time 2.8406E-02 seconds   3  3       14340        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000187742 0.000173138 0.000197077
+   crystal router                : 0.000475933 0.000475352 0.000476567
+   all reduce                    : 0.000256579 0.000256518 0.000256656
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 5.3643E-02 seconds   4  5       75812        2048
+ regenerate geometry data 1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data 1
+  
+ h1_mg_nx: 1 2 4
+ h1_mg_ny: 1 2 4
+ h1_mg_nz: 1 2 4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000143274 0.000135158 0.000149365
+   crystal router                : 0.000150161 0.000149507 0.00015106
+   all reduce                    : 2.55467e-05 2.54374e-05 2.55859e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+   setupds time 2.0893E-02 seconds   5  2        2048        2048
+   setvert3d:   4       38928       55312       38928       38928
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20096 unique labels shared
+   pairwise times (avg, min, max): 0.000159151 0.000149979 0.000168091
+   crystal router                : 0.000338127 0.000337319 0.000339309
+   all reduce                    : 0.000146645 0.000146593 0.000146704
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 25052 25052 25052
+   buffer bytes (avg, min, max): 321536 321536 321536
+   setupds time 3.8889E-02 seconds   6  4       38928        2048
+   setvert3d:   3       14340       16388       14340       14340
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8320 unique labels shared
+   pairwise times (avg, min, max): 0.000151927 0.000143319 0.000159071
+   crystal router                : 0.000227105 0.000226338 0.000228152
+   all reduce                    : 6.95787e-05 6.94938e-05 6.96324e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 11644 11644 11644
+   buffer bytes (avg, min, max): 133120 133120 133120
+   setupds time 2.8596E-02 seconds   7  3       14340        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000190986 0.000175266 0.000201216
+   crystal router                : 0.000478441 0.000477813 0.000479286
+   all reduce                    : 0.00025712 0.000257073 0.000257201
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 5.3825E-02 seconds   8  5       75812        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000190981 0.000174954 0.000200911
+   crystal router                : 0.000477996 0.000477398 0.000478712
+   all reduce                    : 0.00025683 0.000256767 0.000256889
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 5.3615E-02 seconds   9  5       75812        2048
+   setvert3d:   7      186468      442468      186468      186468
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 86144 unique labels shared
+   pairwise times (avg, min, max): 0.000199859 0.000183907 0.00021146
+   crystal router                : 0.000877394 0.000876633 0.000878045
+   all reduce                    : 0.000579443 0.000579225 0.000579578
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 65492 65492 65492
+   buffer bytes (avg, min, max): 29600 29600 29600
+   setupds time 9.5172E-02 seconds  10  7      186468        2048
+ setup h1 coarse grid, nx_crs= 2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000148642 0.000140318 0.000157033
+   crystal router                : 0.000152369 0.000151619 0.000153571
+   all reduce                    : 2.57171e-05 2.56231e-05 2.57721e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+ done :: setup h1 coarse grid  0.146784993121400476  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ Set up CMT-Nek
+   setvert3d:   7      186468      442468      186468      186468
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 64000 unique labels shared
+   pairwise times (avg, min, max): 6.97671e-05 6.81964e-05 7.21783e-05
+   crystal router                : 0.000614486 0.000613801 0.000615088
+   all reduce                    : 0.000436732 0.000436565 0.000437011
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 41116 41116 41116
+   buffer bytes (avg, min, max): 16000 16000 16000
+ Initialized DG machinery
+ set initial conditions
+ nekuic (1) for ifld  1
+ call nekuic for vel  
+ xyz min     .00000E+00   .00000E+00   .00000E+00
+ uvwpt min   .00000E+00   .00000E+00   .00000E+00   .00000E+00   .00000E+00
+ PS min      .00000E+00   .00000E+00   .99000E+22
+ xyz max     10.000       1.0000       1.0000    
+ uvwpt max   .00000E+00   .00000E+00   .00000E+00   .00000E+00   .00000E+00
+ PS max      .00000E+00   .00000E+00  -.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+ done :: userchk
+
+gridpoints unique/tot:        131072       256000
+  dofs: 131072 131072
+  
+ Initialization successfully completed    1.0081     sec
+
+Starting time loop ...
+
+     DT/DTCFL/DTFS/DTINIT    .100E-02    .100E-02    .000E+00    .100E-02
+Step      1, t= 1.0000000E-03, DT= 1.0000000E-03, C=   .000 0.0000E+00 0.0000E+00
+ CMT branch active
+Cxyz min     .00000E+00   .00000E+00   .00000E+00
+Cuvwpt min   .00000E+00   .00000E+00   .00000E+00   1.0000       1.0000    
+Cxyz max     10.000       1.0000       1.0000    
+Cuvwpt max   .00000E+00   .00000E+00   .00000E+00   1.0000       1.0000    
+ done :: set initial conditions, CMT-nek
+  
+ called set_bounds_box
+ /-------------------------------------------------------------//
+ /                       Particle Options                      //
+ /-------------------------------------------------------------//
+The number of particles                                   1310720
+Solver (0=bdf/ext tracer,1=rk3,2=bdf)             :             2
+Reduced interpolation                             :          3/ 5
+Particle boundary condition (0=outflow,1=periodic):             1
+Delay particles until timestep                    :             0
+Two-way coupled (0=no,1=yes)                      :             0
+Forces (0=no,1=yes,-1=on w/o corr;usr,qs,un,iu)   :    0, 0, 0, 0
+Super particle loading                            :    6.6323E+03
+Particle density [kg/m^3]                         :    2.4600E+03
+Particle diameter [m]                             :    1.3000E-04
+Fluid viscosity for drag [Pa s]                   :    1.8411E-05
+Average particle volume fraction                  :    1.0000E-02
+ //-------------------------------------------------------------/
+ /                     End Particle Options                    //
+ //-------------------------------------------------------------/
+ initializing intpts(), tol= 0.999999999999999980E-12
+ findpts 3.00594033375091385
+ nfpts 9477
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.rea                                                                  
+ WARNING: lgmres might be too low!
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.re2                                                                  
+ byte swap: F 6.543210030 -0.2931277218E+36
+
+ mapping elements to processors
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/lb/b3d.map                                                                  
+ read map file 0.577875093731563538E-01
+ recompute_partitions: psum(nelgt):  2621440
+ ratio: 1.00000000000000000
+ Component 0: 0.415887118746468332
+ Component 1a: 0.135262453113682568E-04
+ Component 0: 0.511494436250359286
+ Component 1a: 0.119649994303472340E-04
+ Component 2a: 0.128392623752006330
+ Component 2a: 0.224024014998576604
+ Component 3a: 0.362512510037049651E-04
+ Component 3a: 0.363206272595562041E-04
+ Component 1b: 0.442899981862865388E-04
+ Component 1b: 0.438575007137842476E-04
+ Component 2b: 0.974365000729449093E-03
+ Component 2b: 0.186980249418411404E-02
+ Component 3b: 0.176741254108492285E-03
+ Component 3b: 0.176708752405829728E-03
+ RANK     0 IEG       1       2       3
+ element load imbalance:  30 2 32
+ done :: mapping elements to processors
+  
+   reading mesh 
+   reading bc for ifld 1
+done :: read .re2 file    .34E-01 sec
+ 0  objects found
+ 103   Parameters from file:
+   1          1.000000         p01 DENSITY
+   2         -10935.00         p02 VISCOS
+  11         5000.00         p11 NSTEPS
+  12         1.0000000E-03     p12 DT
+  15          10000.000         p15 IOSTEP
+  21         1.0000000E-05     p21 DIVERGENCE
+  22         1.0000000E-08     p22 HELMHOLTZ
+  24         1.0000000E-02     p24 TOLREL
+  25         1.0000000E-02     p25 TOLABS
+  27          3.000000         p27 TORDER
+  59         0.0000000E+00     p59 !=0 --> use std axhelm for all elem
+  65          1.000000         p65 #iofile(eg,0 or 64); <0 --> sep. dirs
+  66          6.000000         p66 write fmt:ONLY postx uses rea value
+  67          6.000000         p67 read fmt: same modes as p66
+  68          1000.000         p68 iastep: freq for avg_all
+  72         1310720.0
+  93          20.00000         p93 Numbr of prev pressure solns saved
+  94          5.000000         p94 start projecting vel. after p94 step
+  95          5.000000         p95 start projecting pr after p95 step
+  99          4.000000         p99    dealiasing:if <0 disable
+ 101          1.000000         p101   No. of additional filter modes
+ 103         5.0000001E-02     p103   weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048         128
+ lx1  /lx2  /lx3 :           5           5           5
+ done :: read .rea file    54763.     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 41936 unique labels shared
+   pairwise times (avg, min, max): 0.000244482 0.000195147 0.000268367
+   crystal router                : 0.000702362 0.000689232 0.000716614
+   all reduce                    : 0.000289456 0.000289374 0.000289534
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 31939 6892 60348
+   buffer bytes (avg, min, max): 14886 5936 24912
+   setupds time 7.9446E-02 seconds  13  5       75812        2048
+ 8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+  E-solver strategy:  0 itr
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data 1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data 1
+  
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field 1    =  F
+ IFADVC for field 1    =  T
+ IFNONL for field 1    =  F
+   
+ Dealiasing enabled, lxd= 6
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+ call usrdat3
+ done :: usrdat3
+
+ Set up CMT-Nek
+   setvert3d:   7      186468      442468      186468      186468
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 70800 unique labels shared
+   pairwise times (avg, min, max): 9.76102e-05 7.28779e-05 0.000112168
+   crystal router                : 0.000973378 0.00095387 0.000993423
+   all reduce                    : 0.000479942 0.000479822 0.000480088
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 42403 7540 81940
+ total reinit time 2.09876883312244900
+ total reinit time 2.03207467812171672
+   buffer bytes (avg, min, max): 17700 4800 32000
+ Initialized DG machinery
+CMT       1, t= 1.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ called set_bounds_box
+ set_bounds_box 0.266935749823460355E-02
+ initializing intpts(), tol= 0.999999999999999980E-12
+ findpts 0.212683437712257728E-02
+ nfpts 0
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12716 2 13996
+ nid:  21 # particles:  12843 2 14123
+ nid:  81 # particles:  19161 3 21081
+ nid:  1 # particles:  19178 3 21098
+ nid:  71 # particles:  19316 3 21236
+ nid:  51 # particles:  19276 3 21196
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: vdtb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      5.0    MB
+                              avg data-throughput =    50.3MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: dmtb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      5.0    MB
+                              avg data-throughput =    49.3MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: fldb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      5.0    MB
+                              avg data-throughput =    53.7MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: ptwb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      5.0    MB
+                              avg data-throughput =    48.6MB/s
+                              io-nodes =     1
+
+    MOM:     1.0000000000E-03    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.8468017578E+00    8.2916423543E-02    6.4300537109E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.6148681641E+00    7.1850113932E-02    8.8116455078E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.5550537109E+00    6.9340732829E-02    1.8450927734E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.0643310547E+00    7.5351646932E-02    3.0517578125E-03    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.9514160156E+00    9.3137114461E-02    5.3823852539E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.4122314453E+00    6.9881074015E-02    3.9389038086E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.1494750977E+00    7.8596746826E-02    2.7194213867E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.4082641602E+00    7.1953908285E-02    8.2312011719E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.9781494141E+00    4.4628518677E-02    9.4375610352E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.9782714844E+00    4.7504232788E-02    8.0279541016E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.4644775391E+00    5.9242152913E-02    1.7358398438E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.7876586914E+00    7.5470705160E-02    4.9465942383E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.4954223633E+00    9.0560572306E-02    9.7415161133E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.8242187500E+00    4.9018409220E-02    4.7808837891E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.3259887695E+00    8.9412728882E-02    4.3627929688E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.3540649414E+00    8.9345567830E-02    1.7886352539E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.7343750000E-01    1.5718738810E-02    2.2817993164E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.0924072266E+00    8.3218648275E-03    9.6353149414E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.1497192383E+00    1.1313584391E-02    9.1723632812E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.1304321289E+00    8.3185067749E-02    7.0767211914E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.6654663086E+00    1.6478879801E-02    3.8677978516E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.4392700195E+00    4.8392590332E-02    1.7324829102E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    6.0180664062E-01    1.6774998983E-02    6.9265747070E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.6299438477E+00    4.0128728231E-02    7.4468994141E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.0191650391E+00    5.5020164998E-02    6.7352294922E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.5270385742E+00    6.6187216187E-02    9.2864990234E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    3.9407348633E+00    2.0923720296E-02    7.3483276367E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.6020507812E+00    5.9742808024E-02    9.3490600586E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.1488037109E+00    2.9184529622E-03    6.2924194336E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.6647338867E+00    5.2077289836E-02    3.8751220703E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.5998535156E+00    2.6369871012E-02    2.0205688477E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.4708862305E+00    4.8468909709E-02    4.6682739258E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.2980957031E+00    2.2205885824E-02    1.9122314453E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    6.0375976562E+00    4.4307977295E-02    6.9445800781E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.4037475586E+00    6.7451065063E-02    1.4859008789E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.9136962891E+00    6.7261793009E-02    6.6867065430E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    6.5185546875E-01    6.9175882975E-03    4.4357299805E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.8585205078E-01    2.0117787679E-03    8.9523315430E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.8880004883E+00    2.8818196615E-03    3.8351440430E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.4006958008E+00    5.9571852620E-02    8.8754272461E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.8617553711E+00    6.4444081624E-03    6.3934326172E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.4757080078E-01    1.6698679606E-02    8.3923339844E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    6.1389160156E+00    6.1403517660E-02    5.7821655273E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.1604614258E+00    4.5385606893E-02    1.6934204102E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.8807983398E+00    4.0321053060E-02    3.2788085938E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.9320068359E+00    7.6209476725E-02    5.2947998047E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.9552001953E+00    3.3208087158E-02    7.8936767578E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.2946777344E+00    2.8628924561E-02    2.7435302734E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.3250122070E+00    9.0383511353E-02    1.3824462891E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.5719604492E+00    8.8924284871E-02    5.6747436523E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.2286987305E+00    3.2450998942E-02    5.3189086914E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.0078125000E-01    1.8756250000E-02    6.0693359375E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.9353027344E+00    2.0710026042E-02    5.0540161133E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.3161010742E+00    2.8448810832E-02    3.0413818359E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.2526855469E+00    3.6941631063E-02    3.2797241211E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.0120239258E+00    6.8837024943E-02    8.5156250000E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.9471435547E+00    3.5515985107E-02    3.2571411133E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.1542358398E+00    5.7639446004E-02    8.2574462891E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.5109252930E+00    7.6203371175E-02    3.4692382812E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    7.6992797852E+00    2.2306627401E-02    1.0681152344E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.6210937500E+00    5.6555710856E-02    9.1400146484E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    6.0272216797E+00    4.3465411377E-02    1.5441894531E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.7753906250E+00    1.2809444173E-02    7.5723266602E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    2.1301269531E+00    8.7437583415E-02    8.9630126953E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.0918579102E+00    7.5089108276E-02    3.7420654297E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.0298461914E+00    6.0249568685E-02    5.3613281250E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    7.8878784180E+00    1.8106008911E-02    5.0619506836E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    4.5715332031E-01    2.4016181437E-02    3.1762695312E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    8.5198974609E+00    5.0126566569E-03    7.5479125977E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    5.8718872070E+00    6.5839199829E-02    7.6828002930E-01    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    9.8309326172E+00    4.8591020711E-02    5.0567626953E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+    PID:     1.0000000000E-03    1.1331176758E+00    5.2385620117E-03    2.1026611328E-02    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+ nek_advance 6.86838085187628167
+ WARNING: CFL-condition & surface tension
+          are not applicable
+Step      2, t= 2.0000000E-03, DT= 1.0000000E-03, C=   .185 6.8720E+00 6.8720E+00
+CMT       2, t= 2.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.203825038624927402E-04
+ findpts 0.288978374737780541E-02
+ nfpts 3
+ nid:  31 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  101 # particles:  12714 2 13994
+ nid:  21 # particles:  12836 2 14116
+ nid:  1 # particles:  19166 3 21086
+ nid:  81 # particles:  19158 3 21078
+ nid:  71 # particles:  19304 3 21224
+ nid:  51 # particles:  19276 3 21196
+ nek_advance 0.492339453128806781
+Step      3, t= 3.0000000E-03, DT= 1.0000000E-03, C=   .185 7.3691E+00 4.9712E-01
+CMT       3, t= 3.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.204049938474781811E-04
+ findpts 0.262721250328468159E-02
+ nfpts 4
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12718 2 13998
+ nid:  21 # particles:  12832 2 14112
+ nid:  81 # particles:  19152 3 21072
+ nid:  1 # particles:  19160 3 21080
+ nid:  71 # particles:  19298 3 21218
+ nid:  51 # particles:  19266 3 21186
+ nek_advance 0.483771611878182739
+Step      4, t= 4.0000000E-03, DT= 1.0000000E-03, C=   .185 7.8623E+00 4.9325E-01
+CMT       4, t= 4.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.209374993573874235E-04
+ findpts 0.284929999907035381E-02
+ nfpts 10
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12714 2 13994
+ nid:  21 # particles:  12831 2 14111
+ nid:  81 # particles:  19143 3 21063
+ nid:  1 # particles:  19150 3 21070
+ nid:  71 # particles:  19285 3 21205
+ nid:  51 # particles:  19260 3 21180
+ nek_advance 0.475530349380278494
+Step      5, t= 5.0000000E-03, DT= 1.0000000E-03, C=   .185 8.3473E+00 4.8500E-01
+CMT       5, t= 5.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.206149998120963573E-04
+ findpts 0.295781250315485522E-02
+ nfpts 7
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12708 2 13988
+ nid:  21 # particles:  12829 2 14109
+ nid:  81 # particles:  19140 3 21060
+ nid:  1 # particles:  19143 3 21063
+ nid:  51 # particles:  19255 3 21175
+ nid:  71 # particles:  19281 3 21201
+ nek_advance 0.473836181874503382
+Step      6, t= 6.0000000E-03, DT= 1.0000000E-03, C=   .185 8.8306E+00 4.8332E-01
+CMT       6, t= 6.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.210650032386183739E-04
+ findpts 0.298863249918213114E-02
+ nfpts 5
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12704 2 13984
+ nid:  21 # particles:  12829 2 14109
+ nid:  71 # particles:  19276 3 21196
+ nid:  81 # particles:  19130 3 21050
+ nid:  1 # particles:  19135 3 21055
+ nid:  51 # particles:  19255 3 21175
+ nek_advance 0.473544986874912865
+Step      7, t= 7.0000000E-03, DT= 1.0000000E-03, C=   .185 9.3136E+00 4.8300E-01
+CMT       7, t= 7.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.202099981834180653E-04
+ findpts 0.317067499418044463E-02
+ nfpts 13
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12700 2 13980
+ nid:  21 # particles:  12821 2 14101
+ nid:  1 # particles:  19131 3 21051
+ nid:  81 # particles:  19122 3 21042
+ nid:  51 # particles:  19250 3 21170
+ nid:  71 # particles:  19275 3 21195
+ nek_advance 0.473652234373730607
+Step      8, t= 8.0000000E-03, DT= 1.0000000E-03, C=   .185 9.7967E+00 4.8301E-01
+CMT       8, t= 8.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.204512471100315452E-04
+ findpts 0.286304375185864046E-02
+ nfpts 6
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12691 2 13971
+ nid:  21 # particles:  12820 2 14100
+ nid:  81 # particles:  19117 3 21037
+ nid:  1 # particles:  19127 3 21047
+ nid:  71 # particles:  19263 3 21183
+ nid:  51 # particles:  19249 3 21169
+ nek_advance 0.472922278124315199
+Step      9, t= 9.0000000E-03, DT= 1.0000000E-03, C=   .185 1.0279E+01 4.8249E-01
+CMT       9, t= 9.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.202474984689615667E-04
+ findpts 0.306593999994220212E-02
+ nfpts 5
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12684 2 13964
+ nid:  21 # particles:  12811 2 14091
+ nid:  81 # particles:  19110 3 21030
+ nid:  1 # particles:  19117 3 21037
+ nid:  71 # particles:  19250 3 21170
+ nid:  51 # particles:  19247 3 21167
+ nek_advance 0.473612466877966654
+Step     10, t= 1.0000000E-02, DT= 1.0000000E-03, C=   .185 1.0762E+01 4.8299E-01
+CMT      10, t= 1.0000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.211924998438917100E-04
+ findpts 0.298545125406235456E-02
+ nfpts 7
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12681 2 13961
+ nid:  21 # particles:  12806 2 14086
+ nid:  81 # particles:  19098 3 21018
+ nid:  1 # particles:  19113 3 21033
+ nid:  51 # particles:  19236 3 21156
+ nid:  71 # particles:  19251 3 21171
+ nek_advance 0.473262768122367561
+Step     11, t= 1.1000000E-02, DT= 1.0000000E-03, C=   .185 1.1245E+01 4.8282E-01
+CMT      11, t= 1.1000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.203000017791055143E-04
+ findpts 0.307580750086344779E-02
+ nfpts 14
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12680 2 13960
+ nid:  21 # particles:  12805 2 14085
+ nid:  81 # particles:  19089 3 21009
+ nid:  1 # particles:  19109 3 21029
+ nid:  71 # particles:  19250 3 21170
+ nid:  51 # particles:  19235 3 21155
+ nek_advance 0.557195655623218045
+Step     12, t= 1.2000000E-02, DT= 1.0000000E-03, C=   .185 1.1812E+01 5.6678E-01
+CMT      12, t= 1.2000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.205249962164089084E-04
+ findpts 0.264454375428613275E-02
+ nfpts 7
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12679 2 13959
+ nid:  21 # particles:  12801 2 14081
+ nid:  51 # particles:  19231 3 21151
+ nid:  81 # particles:  19080 3 21000
+ nid:  1 # particles:  19100 3 21020
+ nid:  71 # particles:  19258 3 21178
+ nek_advance 0.473228123126318678
+Step     13, t= 1.3000000E-02, DT= 1.0000000E-03, C=   .185 1.2294E+01 4.8269E-01
+CMT      13, t= 1.3000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.207650009542703629E-04
+ findpts 0.284425249992636964E-02
+ nfpts 6
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12674 2 13954
+ nid:  21 # particles:  12798 2 14078
+ nid:  81 # particles:  19075 3 20995
+ nid:  1 # particles:  19092 3 21012
+ nid:  71 # particles:  19253 3 21173
+ nid:  51 # particles:  19225 3 21145
+ nek_advance 0.473053496869397350
+Step     14, t= 1.4000000E-02, DT= 1.0000000E-03, C=   .185 1.2777E+01 4.8259E-01
+CMT      14, t= 1.4000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.208025012398138642E-04
+ findpts 0.303523500042501837E-02
+ nfpts 6
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12666 2 13946
+ nid:  21 # particles:  12794 2 14074
+ nid:  81 # particles:  19067 3 20987
+ nid:  1 # particles:  19084 3 21004
+ nid:  71 # particles:  19241 3 21161
+ nid:  51 # particles:  19223 3 21143
+ nek_advance 0.473051234373997431
+Step     15, t= 1.5000000E-02, DT= 1.0000000E-03, C=   .185 1.3260E+01 4.8264E-01
+CMT      15, t= 1.5000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.203074960154481232E-04
+ findpts 0.301268500334117562E-02
+ nfpts 10
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  21 # particles:  12791 2 14071
+ nid:  101 # particles:  12665 2 13945
+ nid:  51 # particles:  19218 3 21138
+ nid:  1 # particles:  19074 3 20994
+ nid:  81 # particles:  19062 3 20982
+ nid:  71 # particles:  19233 3 21153
+ nek_advance 0.473679899376293179
+Step     16, t= 1.6000000E-02, DT= 1.0000000E-03, C=   .185 1.3743E+01 4.8321E-01
+CMT      16, t= 1.6000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.202325027203187346E-04
+ findpts 0.285539874312235042E-02
+ nfpts 6
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12655 2 13935
+ nid:  21 # particles:  12789 2 14069
+ nid:  81 # particles:  19053 3 20973
+ nid:  1 # particles:  19065 3 20985
+ nid:  51 # particles:  19210 3 21130
+ nid:  71 # particles:  19228 3 21148
+ nek_advance 0.622459399375657085
+Step     17, t= 1.7000000E-02, DT= 1.0000000E-03, C=   .185 1.4375E+01 6.3214E-01
+CMT      17, t= 1.7000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.204125026357360184E-04
+ findpts 0.285577875183662400E-02
+ nfpts 10
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12655 2 13935
+ nid:  21 # particles:  12782 2 14062
+ nid:  81 # particles:  19047 3 20967
+ nid:  1 # particles:  19059 3 20979
+ nid:  51 # particles:  19206 3 21126
+ nid:  71 # particles:  19218 3 21138
+ nek_advance 0.474024296876450535
+Step     18, t= 1.8000000E-02, DT= 1.0000000E-03, C=   .185 1.4859E+01 4.8360E-01
+CMT      18, t= 1.8000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.206449985853396356E-04
+ findpts 0.293532000068807974E-02
+ nfpts 7
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12649 2 13929
+ nid:  21 # particles:  12773 2 14053
+ nid:  1 # particles:  19055 3 20975
+ nid:  81 # particles:  19038 3 20958
+ nid:  51 # particles:  19187 3 21107
+ nid:  71 # particles:  19220 3 21140
+ nek_advance 0.473138898123579565
+Step     19, t= 1.9000000E-02, DT= 1.0000000E-03, C=   .185 1.5341E+01 4.8280E-01
+CMT      19, t= 1.9000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.202849987545050681E-04
+ findpts 0.271638749836711213E-02
+ nfpts 7
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  21 # particles:  12770 2 14050
+ nid:  101 # particles:  12646 2 13926
+ nid:  81 # particles:  19036 3 20956
+ nid:  1 # particles:  19049 3 20969
+ nid:  51 # particles:  19182 3 21102
+ nid:  71 # particles:  19218 3 21138
+ nek_advance 0.473176376872288529
+Step     20, t= 2.0000000E-02, DT= 1.0000000E-03, C=   .185 1.5824E+01 4.8287E-01
+CMT      20, t= 2.0000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.205774995265528560E-04
+ findpts 0.265530875185504556E-02
+ nfpts 8
+ nid:  61 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12642 2 13922
+ nid:  21 # particles:  12766 2 14046
+ nid:  1 # particles:  19038 3 20958
+ nid:  81 # particles:  19026 3 20946
+ nid:  51 # particles:  19173 3 21093
+ nid:  71 # particles:  19208 3 21128
+ nek_advance 0.472121893129951786
+Step     21, t= 2.1000000E-02, DT= 1.0000000E-03, C=   .185 1.6306E+01 4.8169E-01
+CMT      21, t= 2.1000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.206225013243965805E-04
+ findpts 0.288789124897448346E-02
+ nfpts 5
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12641 2 13921
+ nid:  21 # particles:  12761 2 14041
+ nid:  81 # particles:  19016 3 20936
+ nid:  1 # particles:  19026 3 20946
+ nid:  71 # particles:  19202 3 21122
+ nid:  51 # particles:  19169 3 21089
+ nek_advance 0.626314844375883695
+Step     22, t= 2.2000000E-02, DT= 1.0000000E-03, C=   .185 1.6942E+01 6.3606E-01
+CMT      22, t= 2.2000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.203974996111355722E-04
+ findpts 0.286007625254569575E-02
+ nfpts 10
+ nid:  31 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12643 2 13923
+ nid:  21 # particles:  12755 2 14035
+ nid:  1 # particles:  19022 3 20942
+ nid:  81 # particles:  19012 3 20932
+ nid:  71 # particles:  19191 3 21111
+ nid:  51 # particles:  19165 3 21085
+ nek_advance 0.473338983123539947
+Step     23, t= 2.3000000E-02, DT= 1.0000000E-03, C=   .185 1.7425E+01 4.8298E-01
+CMT      23, t= 2.3000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.200449940166436136E-04
+ findpts 0.257594874710775912E-02
+ nfpts 1
+ nid:  111 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12640 2 13920
+ nid:  21 # particles:  12749 2 14029
+ nid:  51 # particles:  19152 3 21072
+ nid:  81 # particles:  19006 3 20926
+ nid:  1 # particles:  19019 3 20939
+ nid:  71 # particles:  19177 3 21097
+ nek_advance 0.472132285627594683
+Step     24, t= 2.4000000E-02, DT= 1.0000000E-03, C=   .185 1.7907E+01 4.8184E-01
+CMT      24, t= 2.4000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.203074960154481232E-04
+ findpts 0.257111374958185479E-02
+ nfpts 8
+ nid:  111 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12639 2 13919
+ nid:  21 # particles:  12746 2 14026
+ nid:  81 # particles:  18999 3 20919
+ nid:  1 # particles:  19010 3 20930
+ nid:  71 # particles:  19175 3 21095
+ nid:  51 # particles:  19146 3 21066
+ nek_advance 0.472254893124045338
+Step     25, t= 2.5000000E-02, DT= 1.0000000E-03, C=   .185 1.8389E+01 4.8199E-01
+CMT      25, t= 2.5000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.206900003831833601E-04
+ findpts 0.265260999731253833E-02
+ nfpts 9
+ nid:  91 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  21 # particles:  12738 2 14018
+ nid:  101 # particles:  12635 2 13915
+ nid:  81 # particles:  18995 3 20915
+ nid:  1 # particles:  19000 3 20920
+ nid:  51 # particles:  19136 3 21056
+ nid:  71 # particles:  19169 3 21089
+ nek_advance 0.472192403125518467
+Step     26, t= 2.6000000E-02, DT= 1.0000000E-03, C=   .185 1.8871E+01 4.8193E-01
+CMT      26, t= 2.6000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.205550022656098008E-04
+ findpts 0.270659125089878216E-02
+ nfpts 6
+ nid:  61 # particles:  0 32 20480
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  21 # particles:  12734 2 14014
+ nid:  101 # particles:  12633 2 13913
+ nid:  81 # particles:  18986 3 20906
+ nid:  1 # particles:  18993 3 20913
+ nid:  71 # particles:  19151 3 21071
+ nid:  51 # particles:  19138 3 21058
+ nek_advance 0.471623088124033529
+Step     27, t= 2.7000000E-02, DT= 1.0000000E-03, C=   .185 1.9352E+01 4.8130E-01
+CMT      27, t= 2.7000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ set_bounds_box 0.210574944503605366E-04
+ findpts 0.321084749884903431E-02
+ nfpts 6
+ nid:  111 # particles:  0 32 20480
+ nid:  31 # particles:  0 32 20480
+ nid:  11 # particles:  0 32 20480
+ nid:  61 # particles:  0 32 20480
+ nid:  41 # particles:  0 32 20480
+ nid:  91 # particles:  0 32 20480
+ nid:  121 # particles:  0 32 20480
+ nid:  101 # particles:  12633 2 13913
+ nid:  21 # particles:  12734 2 14014

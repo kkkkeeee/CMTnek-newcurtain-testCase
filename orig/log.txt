@@ -1,0 +1,855 @@
+/----------------------------------------------------------\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \/ __ \/ __ \   |
+|    /  |/ // __/  / ,<   /___ \ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \___/ \___/ \___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| NEK5000:  Open Source Spectral Element Solver            |
+| COPYRIGHT (c) 2008-2017 UCHICAGO ARGONNE, LLC            |
+| Version:  17.0.0                                         |
+| Web:      http://nek5000.mcs.anl.gov                     |
+|                                                          |
+\----------------------------------------------------------/
+                                                              
+
+ Number of processors: 128
+ REAL    wdsize      : 8
+ INTEGER wdsize      : 4
+ Timer accuracy      : 1.60E-07
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/orig/b3d.rea                                                                
+ WARNING: lgmres might be too low!
+
+ mapping elements to processors
+ Reading /p/lscratchv/zhai1/newcurtain-cmtnek-tests/b3d-128-2048/orig/b3d.map                                                                
+ RANK     0 IEG    1541    1542    1543    1544    1549    1550    1551    1552
+                   1797    1798    1799    1800    1805    1806    1807    1808
+ element load imbalance:  0 16 16
+ done :: mapping elements to processors
+  
+ 0  objects found
+ 103   Parameters from file:
+   1          1.000000         p01 DENSITY
+   2         -10935.00         p02 VISCOS
+  11         5000.00         p11 NSTEPS
+  12         1.0000000E-03     p12 DT
+  15          10000.000         p15 IOSTEP
+  21         1.0000000E-05     p21 DIVERGENCE
+  22         1.0000000E-08     p22 HELMHOLTZ
+  24         1.0000000E-02     p24 TOLREL
+  25         1.0000000E-02     p25 TOLABS
+  27          3.000000         p27 TORDER
+  59         0.0000000E+00     p59 !=0 --> use std axhelm for all elem
+  65          1.000000         p65 #iofile(eg,0 or 64); <0 --> sep. dirs
+  66          6.000000         p66 write fmt:ONLY postx uses rea value
+  67          6.000000         p67 read fmt: same modes as p66
+  68          1000.000         p68 iastep: freq for avg_all
+  72         1310720.0
+  93          20.00000         p93 Numbr of prev pressure solns saved
+  94          5.000000         p94 start projecting vel. after p94 step
+  95          5.000000         p95 start projecting pr after p95 step
+  99          4.000000         p99    dealiasing:if <0 disable
+ 101          1.000000         p101   No. of additional filter modes
+ 103         5.0000001E-02     p103   weight of stabilizing filter (.01)
+  
+ nelgt/nelgv/lelt:        2048        2048          20
+ lx1  /lx2  /lx3 :           5           5           5
+ done :: read .rea file    .93545     sec
+
+ setup mesh topology
+   Right-handed check complete for    2048 elements. OK.
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000195139 0.00018047 0.000202941
+   crystal router                : 0.000476057 0.000475507 0.000476651
+   all reduce                    : 0.000276901 0.000276769 0.000276971
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 6.2391E-02 seconds   0  5       75812        2048
+ 8  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+ regenerate geometry data 1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data 1
+  
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+ IFTRAN   = T
+ IFFLOW   = T
+ IFHEAT   = F
+ IFSPLIT  = T
+ IFLOMACH = F
+ IFUSERVP = F
+ IFUSERMV = F
+ IFSTRS   = F
+ IFCHAR   = F
+ IFCYCLIC = F
+ IFAXIS   = F
+ IFMVBD   = F
+ IFMELT   = F
+ IFMODEL  = F
+ IFKEPS   = F
+ IFMOAB   = F
+ IFNEKNEK = F
+ IFSYNC   = T
+   
+ IFVCOR   = T
+ IFINTQ   = F
+ IFCWUZ   = F
+ IFSWALL  = F
+ IFGEOM   = F
+ IFSURT   = F
+ IFWCNO   = F
+   
+ IFTMSH for field 1    =  F
+ IFADVC for field 1    =  T
+ IFNONL for field 1    =  F
+   
+ Dealiasing enabled, lxd= 6
+  
+ Estimated eigenvalues
+ EIGAA =  6.61263494872986968
+ EIGGA =  188667.016559569340
+ EIGAE =  0.986960440108935882E-01
+ EIGAS =  0.124378109452736338E-02
+ EIGGE =  188667.016559569340
+ EIGGS =  2.00000000000000000
+  
+ verify mesh topology
+ 0.000000000000000000E+00 10.0000000000000000  Xrange
+ 0.000000000000000000E+00 1.00000000000000000  Yrange
+ 0.000000000000000000E+00 1.00000000000000000  Zrange
+ done :: verify mesh topology
+  
+  E-solver strategy:  0 itr
+ mg_nx: 1 2 4
+ mg_ny: 1 2 4
+ mg_nz: 1 2 4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000145434 0.000136442 0.000151529
+   crystal router                : 0.000154438 0.000154035 0.000154973
+   all reduce                    : 2.8e-05 2.78661e-05 2.80536e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+   setupds time 2.1119E-02 seconds   1  2        2048        2048
+   setvert3d:   4       38928       55312       38928       38928
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20096 unique labels shared
+   pairwise times (avg, min, max): 0.000153671 0.000144135 0.000162483
+   crystal router                : 0.000336025 0.000335452 0.000336585
+   all reduce                    : 0.000158188 0.000158035 0.00015826
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 25052 25052 25052
+   buffer bytes (avg, min, max): 321536 321536 321536
+   setupds time 4.3129E-02 seconds   2  4       38928        2048
+   setvert3d:   3       14340       16388       14340       14340
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8320 unique labels shared
+   pairwise times (avg, min, max): 0.000149767 0.000140136 0.00015764
+   crystal router                : 0.000226356 0.000225767 0.00022689
+   all reduce                    : 7.52467e-05 7.51189e-05 7.53072e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 11644 11644 11644
+   buffer bytes (avg, min, max): 133120 133120 133120
+   setupds time 3.0199E-02 seconds   3  3       14340        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000195039 0.000178007 0.000203858
+   crystal router                : 0.000477153 0.000476583 0.000477749
+   all reduce                    : 0.000277054 0.000276935 0.000277187
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 6.2250E-02 seconds   4  5       75812        2048
+ regenerate geometry data 1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data 1
+  
+ h1_mg_nx: 1 2 4
+ h1_mg_ny: 1 2 4
+ h1_mg_nz: 1 2 4
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000146065 0.000136775 0.000152852
+   crystal router                : 0.000154354 0.000153935 0.000154977
+   all reduce                    : 2.80065e-05 2.78894e-05 2.80617e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+   setupds time 2.2549E-02 seconds   5  2        2048        2048
+   setvert3d:   4       38928       55312       38928       38928
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 20096 unique labels shared
+   pairwise times (avg, min, max): 0.00015701 0.000147294 0.000165319
+   crystal router                : 0.000338503 0.000337967 0.000339291
+   all reduce                    : 0.000158992 0.000158875 0.000159088
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 25052 25052 25052
+   buffer bytes (avg, min, max): 321536 321536 321536
+   setupds time 4.3527E-02 seconds   6  4       38928        2048
+   setvert3d:   3       14340       16388       14340       14340
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 8320 unique labels shared
+   pairwise times (avg, min, max): 0.000153676 0.000143159 0.000161455
+   crystal router                : 0.000228468 0.000227957 0.000229289
+   all reduce                    : 7.53082e-05 7.51199e-05 7.53759e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 11644 11644 11644
+   buffer bytes (avg, min, max): 133120 133120 133120
+   setupds time 3.0319E-02 seconds   7  3       14340        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000197507 0.000180932 0.000205325
+   crystal router                : 0.000479635 0.000479004 0.000480441
+   all reduce                    : 0.000277535 0.000277402 0.000277667
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 6.2859E-02 seconds   8  5       75812        2048
+   setvert3d:   5       75812      131108       75812       75812
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 36992 unique labels shared
+   pairwise times (avg, min, max): 0.000197201 0.000180631 0.000205355
+   crystal router                : 0.000479505 0.000479113 0.000480008
+   all reduce                    : 0.000277359 0.000277236 0.000277454
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 30932 30932 30932
+   buffer bytes (avg, min, max): 14752 14752 14752
+   setupds time 6.2415E-02 seconds   9  5       75812        2048
+   setvert3d:   7      186468      442468      186468      186468
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 86144 unique labels shared
+   pairwise times (avg, min, max): 0.00020634 0.000188754 0.00021477
+   crystal router                : 0.00086218 0.000861445 0.000863382
+   all reduce                    : 0.000625653 0.000625184 0.000626039
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 65492 65492 65492
+   buffer bytes (avg, min, max): 29600 29600 29600
+   setupds time 1.1338E-01 seconds  10  7      186468        2048
+ setup h1 coarse grid, nx_crs= 2
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 1664 unique labels shared
+   pairwise times (avg, min, max): 0.000150377 0.000139729 0.000157909
+   crystal router                : 0.000155642 0.000155212 0.000156525
+   all reduce                    : 2.83111e-05 2.81969e-05 2.83781e-05
+   used all_to_all method: allreduce
+   handle bytes (avg, min, max): 3420 3420 3420
+   buffer bytes (avg, min, max): 26624 26624 26624
+ done :: setup h1 coarse grid  0.145926375626004301  sec
+  
+ call usrdat3
+ done :: usrdat3
+
+ Set up CMT-Nek
+   setvert3d:   7      186468      442468      186468      186468
+ call usrsetvert
+ done :: usrsetvert
+
+gs_setup: 64000 unique labels shared
+   pairwise times (avg, min, max): 7.0444e-05 6.90424e-05 7.25606e-05
+   crystal router                : 0.000617122 0.000616413 0.000617773
+   all reduce                    : 0.000469073 0.000468782 0.000469367
+   used all_to_all method: pairwise
+   handle bytes (avg, min, max): 41116 41116 41116
+   buffer bytes (avg, min, max): 16000 16000 16000
+ Initialized DG machinery
+ set initial conditions
+ nekuic (1) for ifld  1
+ call nekuic for vel  
+ xyz min     .00000E+00   .00000E+00   .00000E+00
+ uvwpt min   .00000E+00   .00000E+00   .00000E+00   .00000E+00   .00000E+00
+ PS min      .00000E+00   .00000E+00   .99000E+22
+ xyz max     10.000       1.0000       1.0000    
+ uvwpt max   .00000E+00   .00000E+00   .00000E+00   .00000E+00   .00000E+00
+ PS max      .00000E+00   .00000E+00  -.99000E+22
+ done :: set initial conditions
+  
+ call userchk
+ done :: userchk
+
+gridpoints unique/tot:        131072       256000
+  dofs: 131072 131072
+  
+ Initialization successfully completed    1.8616     sec
+
+Starting time loop ...
+
+     DT/DTCFL/DTFS/DTINIT    .100E-02    .100E-02    .000E+00    .100E-02
+Step      1, t= 1.0000000E-03, DT= 1.0000000E-03, C=   .000 0.0000E+00 0.0000E+00
+ CMT branch active
+Cxyz min     .00000E+00   .00000E+00   .00000E+00
+Cuvwpt min   .00000E+00   .00000E+00   .00000E+00   1.0000       1.0000    
+Cxyz max     10.000       1.0000       1.0000    
+Cuvwpt max   .00000E+00   .00000E+00   .00000E+00   1.0000       1.0000    
+ done :: set initial conditions, CMT-nek
+  
+ /-------------------------------------------------------------//
+ /                       Particle Options                      //
+ /-------------------------------------------------------------//
+The number of particles                                   1310720
+Solver (0=bdf/ext tracer,1=rk3,2=bdf)             :             2
+Reduced interpolation                             :          3/ 5
+Particle boundary condition (0=outflow,1=periodic):             1
+Delay particles until timestep                    :             0
+Two-way coupled (0=no,1=yes)                      :             0
+Forces (0=no,1=yes,-1=on w/o corr;usr,qs,un,iu)   :    0, 0, 0, 0
+Super particle loading                            :    6.6323E+03
+Particle density [kg/m^3]                         :    2.4600E+03
+Particle diameter [m]                             :    1.3000E-04
+Fluid viscosity for drag [Pa s]                   :    1.8411E-05
+Average particle volume fraction                  :    1.0000E-02
+ //-------------------------------------------------------------/
+ /                     End Particle Options                    //
+ //-------------------------------------------------------------/
+ initializing intpts(), tol= 0.999999999999999980E-12
+ before transfer nid: 61 # particles: 10240
+ before transfer nid: 0 # particles: 10240
+ before transfer nid: 126 # particles: 10240
+ before transfer nid: 83 # particles: 10240
+ before transfer nid: 102 # particles: 10240
+ before transfer nid: 72 # particles: 10240
+ before transfer nid: 32 # particles: 10240
+ before transfer nid: 24 # particles: 10240
+ before transfer nid: 56 # particles: 10240
+ before transfer nid: 11 # particles: 10240
+ before transfer nid: 115 # particles: 10240
+ before transfer nid: 91 # particles: 10240
+ before transfer nid: 99 # particles: 10240
+ before transfer nid: 77 # particles: 10240
+ before transfer nid: 33 # particles: 10240
+ before transfer nid: 30 # particles: 10240
+ before transfer nid: 51 # particles: 10240
+ before transfer nid: 12 # particles: 10240
+ before transfer nid: 117 # particles: 10240
+ before transfer nid: 85 # particles: 10240
+ before transfer nid: 75 # particles: 10240
+ before transfer nid: 103 # particles: 10240
+ before transfer nid: 31 # particles: 10240
+ before transfer nid: 34 # particles: 10240
+ before transfer nid: 62 # particles: 10240
+ before transfer nid: 5 # particles: 10240
+ before transfer nid: 119 # particles: 10240
+ before transfer nid: 82 # particles: 10240
+ before transfer nid: 67 # particles: 10240
+ before transfer nid: 109 # particles: 10240
+ before transfer nid: 40 # particles: 10240
+ before transfer nid: 22 # particles: 10240
+ before transfer nid: 6 # particles: 10240
+ before transfer nid: 53 # particles: 10240
+ before transfer nid: 93 # particles: 10240
+ before transfer nid: 127 # particles: 10240
+ before transfer nid: 64 # particles: 10240
+ before transfer nid: 106 # particles: 10240
+ before transfer nid: 27 # particles: 10240
+ before transfer nid: 38 # particles: 10240
+ before transfer nid: 9 # particles: 10240
+ before transfer nid: 48 # particles: 10240
+ before transfer nid: 95 # particles: 10240
+ before transfer nid: 123 # particles: 10240
+ before transfer nid: 70 # particles: 10240
+ before transfer nid: 108 # particles: 10240
+ before transfer nid: 25 # particles: 10240
+ before transfer nid: 41 # particles: 10240
+ before transfer nid: 2 # particles: 10240
+ before transfer nid: 49 # particles: 10240
+ before transfer nid: 89 # particles: 10240
+ before transfer nid: 118 # particles: 10240
+ before transfer nid: 73 # particles: 10240
+ before transfer nid: 96 # particles: 10240
+ before transfer nid: 19 # particles: 10240
+ before transfer nid: 42 # particles: 10240
+ before transfer nid: 15 # particles: 10240
+ before transfer nid: 63 # particles: 10240
+ before transfer nid: 80 # particles: 10240
+ before transfer nid: 112 # particles: 10240
+ before transfer nid: 78 # particles: 10240
+ before transfer nid: 110 # particles: 10240
+ before transfer nid: 21 # particles: 10240
+ before transfer nid: 39 # particles: 10240
+ before transfer nid: 14 # particles: 10240
+ before transfer nid: 58 # particles: 10240
+ before transfer nid: 90 # particles: 10240
+ before transfer nid: 114 # particles: 10240
+ before transfer nid: 65 # particles: 10240
+ before transfer nid: 97 # particles: 10240
+ before transfer nid: 20 # particles: 10240
+ before transfer nid: 43 # particles: 10240
+ before transfer nid: 13 # particles: 10240
+ before transfer nid: 54 # particles: 10240
+ before transfer nid: 94 # particles: 10240
+ before transfer nid: 121 # particles: 10240
+ before transfer nid: 74 # particles: 10240
+ before transfer nid: 100 # particles: 10240
+ before transfer nid: 29 # particles: 10240
+ before transfer nid: 44 # particles: 10240
+ before transfer nid: 4 # particles: 10240
+ before transfer nid: 59 # particles: 10240
+ before transfer nid: 86 # particles: 10240
+ before transfer nid: 79 # particles: 10240
+ before transfer nid: 116 # particles: 10240
+ before transfer nid: 107 # particles: 10240
+ before transfer nid: 26 # particles: 10240
+ before transfer nid: 7 # particles: 10240
+ before transfer nid: 46 # particles: 10240
+ before transfer nid: 52 # particles: 10240
+ before transfer nid: 88 # particles: 10240
+ before transfer nid: 66 # particles: 10240
+ before transfer nid: 113 # particles: 10240
+ before transfer nid: 23 # particles: 10240
+ before transfer nid: 101 # particles: 10240
+ before transfer nid: 8 # particles: 10240
+ before transfer nid: 45 # particles: 10240
+ before transfer nid: 87 # particles: 10240
+ before transfer nid: 55 # particles: 10240
+ before transfer nid: 120 # particles: 10240
+ before transfer nid: 68 # particles: 10240
+ before transfer nid: 98 # particles: 10240
+ before transfer nid: 16 # particles: 10240
+ before transfer nid: 47 # particles: 10240
+ before transfer nid: 3 # particles: 10240
+ before transfer nid: 60 # particles: 10240
+ before transfer nid: 92 # particles: 10240
+ before transfer nid: 122 # particles: 10240
+ before transfer nid: 69 # particles: 10240
+ before transfer nid: 104 # particles: 10240
+ before transfer nid: 18 # particles: 10240
+ before transfer nid: 37 # particles: 10240
+ before transfer nid: 1 # particles: 10240
+ before transfer nid: 50 # particles: 10240
+ before transfer nid: 84 # particles: 10240
+ before transfer nid: 124 # particles: 10240
+ before transfer nid: 76 # particles: 10240
+ before transfer nid: 105 # particles: 10240
+ before transfer nid: 28 # particles: 10240
+ before transfer nid: 36 # particles: 10240
+ before transfer nid: 10 # particles: 10240
+ before transfer nid: 57 # particles: 10240
+ before transfer nid: 81 # particles: 10240
+ before transfer nid: 125 # particles: 10240
+ before transfer nid: 71 # particles: 10240
+ before transfer nid: 17 # particles: 10240
+ before transfer nid: 111 # particles: 10240
+ before transfer nid: 35 # particles: 10240
+ findpts 3.07626322500436800
+ nfpts 9477
+CMT       1, t= 1.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.187866124979336746E-01
+ findpts 0.756111876398790628E-03
+ nfpts 0
+ nid:  101 # particles:  0
+ nid:  71 # particles:  0
+ nid:  51 # particles:  0
+ nid:  81 # particles:  0
+ nid:  121 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  91 # particles:  0
+ nid:  111 # particles:  0
+ nid:  31 # particles:  0
+ nid:  61 # particles:  0
+ move_particles_inproc 0.350401696246990468
+ interp_props_part_location 0.404921248751634266 3 61368
+ update_vel_and_pos_lb 0.162213087533018552E-01
+ nid:  11 # particles:  61574
+ nid:  1 # particles:  102231
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: vdtb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      8.0    MB
+                              avg data-throughput =    51.3MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: dmtb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      8.0    MB
+                              avg data-throughput =    56.8MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: fldb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      8.0    MB
+                              avg data-throughput =    54.0MB/s
+                              io-nodes =     1
+
+
+        1  1.0000E-03 Write checkpoint:
+       0       1 OPEN: ptwb3d0.f00001
+
+        1  1.0000E-03 done :: Write checkpoint
+                              file size =      8.0    MB
+                              avg data-throughput =    59.3MB/s
+                              io-nodes =     1
+
+    MOM:     1.0000000000E-03    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00    0.0000000000E+00
+ WARNING: CFL-condition & surface tension
+          are not applicable
+Step      2, t= 2.0000000E-03, DT= 1.0000000E-03, C=   .185 7.5743E+00 7.5743E+00
+CMT       2, t= 2.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.187984000003780238E-01
+ findpts 0.343885125039378181E-02
+ nfpts 36
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  91 # particles:  0
+ nid:  41 # particles:  0
+ nid:  21 # particles:  0
+ nid:  61 # particles:  0
+ nid:  81 # particles:  0
+ nid:  121 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.376750268747855444
+ interp_props_part_location 0.406360531247628387 3 61406
+ update_vel_and_pos_lb 0.162206562526989728E-01
+ nid:  11 # particles:  61609
+ nid:  1 # particles:  102193
+Step      3, t= 3.0000000E-03, DT= 1.0000000E-03, C=   .185 8.9216E+00 1.3474E+00
+CMT       3, t= 3.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188083774992264807E-01
+ findpts 0.356646250293124467E-02
+ nfpts 23
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  81 # particles:  0
+ nid:  121 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  91 # particles:  0
+ nid:  51 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  61 # particles:  0
+ move_particles_inproc 0.373834268750215415
+ interp_props_part_location 0.404671426251297817 3 61447
+ update_vel_and_pos_lb 0.167958837555488572E-01
+ nid:  11 # particles:  61645
+ nid:  1 # particles:  102152
+Step      4, t= 4.0000000E-03, DT= 1.0000000E-03, C=   .185 1.0263E+01 1.3418E+00
+CMT       4, t= 4.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188280949951149523E-01
+ findpts 0.348839874641271308E-02
+ nfpts 36
+ nid:  101 # particles:  0
+ nid:  81 # particles:  0
+ nid:  41 # particles:  0
+ nid:  71 # particles:  0
+ nid:  121 # particles:  0
+ nid:  21 # particles:  0
+ nid:  61 # particles:  0
+ nid:  91 # particles:  0
+ nid:  111 # particles:  0
+ nid:  31 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.363027331244666129
+ interp_props_part_location 0.406556671252474189 3 61475
+ update_vel_and_pos_lb 0.162021312498836778E-01
+ nid:  11 # particles:  61679
+ nid:  1 # particles:  102124
+Step      5, t= 5.0000000E-03, DT= 1.0000000E-03, C=   .185 1.1611E+01 1.3473E+00
+CMT       5, t= 5.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188357112565427087E-01
+ findpts 0.341518750065006316E-02
+ nfpts 38
+ nid:  111 # particles:  0
+ nid:  71 # particles:  0
+ nid:  121 # particles:  0
+ nid:  81 # particles:  0
+ nid:  41 # particles:  0
+ nid:  31 # particles:  0
+ nid:  61 # particles:  0
+ nid:  91 # particles:  0
+ nid:  101 # particles:  0
+ nid:  21 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.371297453748411499
+ interp_props_part_location 0.431368921250395942 3 61500
+ nid:  11 # particles:  61712
+ update_vel_and_pos_lb 0.162955387495458126E-01
+ nid:  1 # particles:  102099
+Step      6, t= 6.0000000E-03, DT= 1.0000000E-03, C=   .185 1.2947E+01 1.3363E+00
+CMT       6, t= 6.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188554987544193864E-01
+ findpts 0.306955500127514824E-02
+ nfpts 38
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  91 # particles:  0
+ nid:  41 # particles:  0
+ nid:  21 # particles:  0
+ nid:  121 # particles:  0
+ nid:  81 # particles:  0
+ nid:  51 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  61 # particles:  0
+ move_particles_inproc 0.375238088745390996
+ interp_props_part_location 0.406229468753736001 3 61540
+ update_vel_and_pos_lb 0.162239112469251268E-01
+ nid:  11 # particles:  61747
+ nid:  1 # particles:  102059
+Step      7, t= 7.0000000E-03, DT= 1.0000000E-03, C=   .185 1.4291E+01 1.3436E+00
+CMT       7, t= 7.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188477424962911755E-01
+ findpts 0.300021500152070075E-02
+ nfpts 27
+ nid:  101 # particles:  0
+ nid:  71 # particles:  0
+ nid:  61 # particles:  0
+ nid:  91 # particles:  0
+ nid:  41 # particles:  0
+ nid:  21 # particles:  0
+ nid:  121 # particles:  0
+ nid:  81 # particles:  0
+ nid:  111 # particles:  0
+ nid:  31 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.366330533746804576
+ interp_props_part_location 0.407861901250726078 3 61576
+ nid:  11 # particles:  61778
+ update_vel_and_pos_lb 0.164300712494878098E-01
+ nid:  1 # particles:  102023
+Step      8, t= 8.0000000E-03, DT= 1.0000000E-03, C=   .185 1.5630E+01 1.3395E+00
+CMT       8, t= 8.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188578162487829104E-01
+ findpts 0.350216500373790041E-02
+ nfpts 32
+ nid:  71 # particles:  0
+ nid:  111 # particles:  0
+ nid:  91 # particles:  0
+ nid:  121 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  81 # particles:  0
+ nid:  61 # particles:  0
+ nid:  31 # particles:  0
+ nid:  101 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.386560898747120518
+ nid:  11 # particles:  61804
+ interp_props_part_location 0.425499916244007181 3 61618
+ update_vel_and_pos_lb 0.163710712513420731E-01
+ nid:  1 # particles:  101981
+Step      9, t= 9.0000000E-03, DT= 1.0000000E-03, C=   .185 1.6962E+01 1.3319E+00
+CMT       9, t= 9.0000000E-03, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188566674987669103E-01
+ findpts 0.296573124796850607E-02
+ nfpts 31
+ nid:  91 # particles:  0
+ nid:  101 # particles:  0
+ nid:  71 # particles:  0
+ nid:  41 # particles:  0
+ nid:  21 # particles:  0
+ nid:  121 # particles:  0
+ nid:  81 # particles:  0
+ nid:  51 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  61 # particles:  0
+ move_particles_inproc 0.381597581254027318
+ interp_props_part_location 0.405455821251962334 3 61650
+ nid:  11 # particles:  61839
+ update_vel_and_pos_lb 0.162458362538018264E-01
+ nid:  1 # particles:  101949
+Step     10, t= 1.0000000E-02, DT= 1.0000000E-03, C=   .185 1.8307E+01 1.3451E+00
+CMT      10, t= 1.0000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.188784875062992796E-01
+ findpts 0.336376374616520479E-02
+ nfpts 34
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  81 # particles:  0
+ nid:  41 # particles:  0
+ nid:  31 # particles:  0
+ nid:  121 # particles:  0
+ nid:  91 # particles:  0
+ nid:  61 # particles:  0
+ nid:  21 # particles:  0
+ nid:  111 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.369307718749041669
+ interp_props_part_location 0.406507343752309680 3 61676
+ update_vel_and_pos_lb 0.163113737507956102E-01
+ nid:  11 # particles:  61872
+ nid:  1 # particles:  101923
+Step     11, t= 1.1000000E-02, DT= 1.0000000E-03, C=   .185 1.9657E+01 1.3495E+00
+CMT      11, t= 1.1000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189060949996928684E-01
+ findpts 0.322361500002443790E-02
+ nfpts 34
+ nid:  111 # particles:  0
+ nid:  71 # particles:  0
+ nid:  121 # particles:  0
+ nid:  91 # particles:  0
+ nid:  51 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  81 # particles:  0
+ nid:  101 # particles:  0
+ nid:  31 # particles:  0
+ nid:  61 # particles:  0
+ move_particles_inproc 0.370667341245280113
+ interp_props_part_location 0.407964988757157698 3 61717
+ nid:  11 # particles:  61906
+ update_vel_and_pos_lb 0.163580862499657087E-01
+ nid:  1 # particles:  101882
+Step     12, t= 1.2000000E-02, DT= 1.0000000E-03, C=   .185 2.1003E+01 1.3469E+00
+CMT      12, t= 1.2000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189128724960028194E-01
+ findpts 0.326756000140449032E-02
+ nfpts 31
+ nid:  111 # particles:  0
+ nid:  81 # particles:  0
+ nid:  121 # particles:  0
+ nid:  71 # particles:  0
+ nid:  61 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  91 # particles:  0
+ nid:  101 # particles:  0
+ nid:  31 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.369531676253245678
+ interp_props_part_location 0.412462866246642079 3 61754
+ update_vel_and_pos_lb 0.164138937470852397E-01
+ nid:  11 # particles:  61926
+ nid:  1 # particles:  101845
+Step     13, t= 1.3000000E-02, DT= 1.0000000E-03, C=   .185 2.2337E+01 1.3337E+00
+CMT      13, t= 1.3000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189254812503349967E-01
+ findpts 0.334547500096959993E-02
+ nfpts 38
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  91 # particles:  0
+ nid:  41 # particles:  0
+ nid:  21 # particles:  0
+ nid:  61 # particles:  0
+ nid:  81 # particles:  0
+ nid:  121 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.370891306250996422
+ interp_props_part_location 0.408754506250261329 3 61794
+ update_vel_and_pos_lb 0.163110237554064952E-01
+ nid:  11 # particles:  61954
+ nid:  1 # particles:  101805
+Step     14, t= 1.4000000E-02, DT= 1.0000000E-03, C=   .185 2.3665E+01 1.3278E+00
+CMT      14, t= 1.4000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189428525045514107E-01
+ findpts 0.336034750216640532E-02
+ nfpts 37
+ nid:  21 # particles:  0
+ nid:  121 # particles:  0
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  81 # particles:  0
+ nid:  61 # particles:  0
+ nid:  31 # particles:  0
+ nid:  41 # particles:  0
+ nid:  91 # particles:  0
+ nid:  111 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.373909936250129249
+ interp_props_part_location 0.405811006246949546 3 61823
+ update_vel_and_pos_lb 0.162995687496731989E-01
+ nid:  11 # particles:  61990
+ nid:  1 # particles:  101776
+Step     15, t= 1.5000000E-02, DT= 1.0000000E-03, C=   .185 2.5005E+01 1.3398E+00
+CMT      15, t= 1.5000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189404225020552985E-01
+ findpts 0.274073249602224678E-02
+ nfpts 25
+ nid:  71 # particles:  0
+ nid:  111 # particles:  0
+ nid:  91 # particles:  0
+ nid:  121 # particles:  0
+ nid:  21 # particles:  0
+ nid:  61 # particles:  0
+ nid:  81 # particles:  0
+ nid:  41 # particles:  0
+ nid:  31 # particles:  0
+ nid:  101 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.362433433750993572
+ interp_props_part_location 0.408011223749781493 3 61851
+ update_vel_and_pos_lb 0.163046787492930889E-01
+ nid:  11 # particles:  62025
+ nid:  1 # particles:  101748
+Step     16, t= 1.6000000E-02, DT= 1.0000000E-03, C=   .185 2.6346E+01 1.3416E+00
+CMT      16, t= 1.6000000E-02, DT= 1.0000000E-03, C= 3.24003E-01, Dmu,knd,art= 0.0000E+00 0.0000E+00 0.0000E+00
+ update_particle_location 0.189500600026804022E-01
+ findpts 0.321791875467170030E-02
+ nfpts 35
+ nid:  71 # particles:  0
+ nid:  101 # particles:  0
+ nid:  81 # particles:  0
+ nid:  61 # particles:  0
+ nid:  21 # particles:  0
+ nid:  41 # particles:  0
+ nid:  91 # particles:  0
+ nid:  121 # particles:  0
+ nid:  31 # particles:  0
+ nid:  111 # particles:  0
+ nid:  51 # particles:  0
+ move_particles_inproc 0.385613541249767877
+ interp_props_part_location 0.408578083748579957 3 61892
+ update_vel_and_pos_lb 0.163211637482163496E-01
+ nid:  11 # particles:  62054
+ nid:  1 # particles:  101707
